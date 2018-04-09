@@ -19,7 +19,7 @@ public class MainController {
     private UserRepository userRepository;
     
     @GetMapping(path="/getuserimage")
-    public @ResponseBody Blob getUserImage(@RequestParam String username) {
+    public @ResponseBody String getUserImage(@RequestParam String username) {
         User user = userRepository.findUserByUsername(username);
         if(user != null) {
             return user.getImagedata();
@@ -37,7 +37,7 @@ public class MainController {
     @PostMapping(path = "/login")
     public @ResponseBody Boolean loginUser(@RequestBody User user) {
         String username = user.getUsername();
-        Blob imagedate = user.getImagedata();
+        String imagedate = user.getImagedata();
         Integer cellId = user.getCellid();
         
         User registeredUser = userRepository.findUserByUsernameAndImagedataAndCellid(username, imagedate, cellId);

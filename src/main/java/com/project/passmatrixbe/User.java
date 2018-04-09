@@ -13,7 +13,7 @@ public class User {
     private String username;
 
     @Lob
-    private Blob imagedata;
+    private String imagedata;
     
     private Integer cellid;
 
@@ -33,11 +33,11 @@ public class User {
         this.username = username;
     }
 
-    public Blob getImagedata() {
+    public String getImagedata() {
         return imagedata;
     }
 
-    public void setImagedata(Blob imagedata) {
+    public void setImagedata(String imagedata) {
         this.imagedata = imagedata;
     }
 
